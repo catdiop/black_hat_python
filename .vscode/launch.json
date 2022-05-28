@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python : Fichier actuel",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python : Proxy FTP",
+            "type": "python",
+            "request": "launch",
+            "program": "proxy.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":["192.168.0.31", "21", "ftp.sun.ac.za", "21", "true"]
+        },
+        {
+            "name": "Python : netcat listener",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-t",
+                "192.168.0.31",
+                "-p",
+                "5555",
+                "-l",
+                "-c"
+            ]
+        },
+        {
+            "name": "Python : netcat client",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-t",
+                "192.168.0.31",
+                "-p",
+                "5555"
+            ]
+        }
+    ]
+}
