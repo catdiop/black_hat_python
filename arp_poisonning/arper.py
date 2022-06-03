@@ -9,12 +9,12 @@ import time
 def get_mac(targetip):
     packet = Ether(dst='ff:ff:ff:ff:ff:ff') / ARP(op="who-has", pdst=targetip)
     res, _ = srp(packet, timeout=2, retry=10,verbose=False)
-    for _,r in resp:
+    for _,r in res:
         return r[Ether].src
     return None
 
 class Arper:
-    def __init__(self, victim, gateway, inface='eth0') -> None:
+    def __init__(self, victim, gateway, interface='eth0') -> None:
         self.victim = victim
         self.victimmac = get_mac(victim)
         self.gateway = gateway
